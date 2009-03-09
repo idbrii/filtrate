@@ -4,6 +4,10 @@
 
 import wx
 
+### NOT GENERATED
+import utility_forgen
+### /NOT GENERATED
+
 # begin wxGlade: extracode
 # end wxGlade
 
@@ -36,33 +40,13 @@ class rr_MainFrame(wx.Frame):
         self.execute.SetDefault()
         # end wxGlade
 
-### NOT GENERATED
-    def __create_content(self):
-        self.__create_checkboxes( 'buildtypes.txt' )
-
-    def __create_checkboxes(self, filename):
-        """
-        __create_checkboxes(filename) --> None
-        Creates the checkboxes according to filename and adds them to self
-        """
-        self.checkboxes = []
-        for text in ("some reg test", "another test"):
-            self.checkboxes.append( wx.CheckBox(self, -1, text) )
-            pass
-
-    def __add_dynamic_checkboxes(self, sizer):
-        self.__create_content()
-        for checkbox in self.checkboxes:
-            sizer.Add(checkbox, 0, 0, 0)
-### /NOT GENERATED
-
     def __do_layout(self):
         # begin wxGlade: rr_MainFrame.__do_layout
         root_sizer = wx.BoxSizer(wx.VERTICAL)
         button_sizer = wx.BoxSizer(wx.HORIZONTAL)
         magic_checkbox_sizer = wx.BoxSizer(wx.VERTICAL)
 ### NOT GENERATED
-        self.__add_dynamic_checkboxes(magic_checkbox_sizer)
+        utility_forgen.add_dynamic_checkboxes(self, magic_checkbox_sizer)
 ### /NOT GENERATED
         root_sizer.Add(magic_checkbox_sizer, 1, wx.EXPAND, 0)
         button_sizer.Add(self.clear, 0, wx.ALL, 5)
