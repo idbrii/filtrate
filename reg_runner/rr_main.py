@@ -27,6 +27,9 @@ class RegRunner(generated.rr_MainFrame):
             if self.checkboxes[key].GetValue():
                 out.write(key)
         out.close()
+
+        ## TODO: run the regression test suite here
+        ## popen(something or other)
         event.Skip()
 
 # end of class RegRunner
