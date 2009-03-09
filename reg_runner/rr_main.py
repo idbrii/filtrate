@@ -7,25 +7,14 @@ class RegRunner(generated.rr_MainFrame):
     def __init__(self, *args, **kwds):
         generated.rr_MainFrame.__init__(self, *args, **kwds)
 
-        self.__create_content()
+    def handle_disabletests(self, event): # wxGlade: rr_MainFrame.<event_handler>
+        event.Skip()
 
-    def __create_content(self):
-        self.__create_checkboxes('buildtypes.txt')
+    def handle_enabletests(self, event): # wxGlade: rr_MainFrame.<event_handler>
+        event.Skip()
 
-    def __create_checkboxes(self, filename):
-        """
-        __addCheckboxes(filename) --> None
-        Creates the checkboxes according to filename and adds them to self
-        """
-        self.checkboxes = []
-        for text in ("some reg test", "another test"):
-            self.checkboxes.append( wx.CheckBox(self, -1, text) )
-
-    def __add_dynamic_checkboxes(self, sizer):
-        print "hi yanna"
-        for checkbox in self.checkboxes:
-            #sizer.Add(checkbox, 0, 0, 0)
-            sizer.Add(checkbox, 1, wx.EXPAND, 0)
+    def handle_execute(self, event): # wxGlade: rr_MainFrame.<event_handler>
+        event.Skip()
 
 # end of class RegRunner
 
