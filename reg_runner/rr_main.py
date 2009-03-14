@@ -2,8 +2,10 @@
 
 import wx
 import generated
+import subprocess
 
 outputfile = 'out_tests_to_run.txt'
+testrunner_file = './regressiontest.exe'
 
 class RegRunner(generated.rr_MainFrame):
     def __init__(self, *args, **kwds):
@@ -28,8 +30,12 @@ class RegRunner(generated.rr_MainFrame):
                 out.write(key)
         out.close()
 
-        ## TODO: run the regression test suite here
-        ## popen(something or other)
+        # run the regression test suite here
+        #result = subprocess.call( ['start ', testrunner_file, outputfile] )
+        result = subprocess.call( [testrunner_file, outputfile] )
+        if result < 0:
+            # TODO: show some kind of error message
+            pass
         event.Skip()
 
 # end of class RegRunner
